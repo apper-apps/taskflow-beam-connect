@@ -1,19 +1,22 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Sidebar from "@/components/organisms/Sidebar";
 import MobileSidebar from "@/components/organisms/MobileSidebar";
 import Header from "@/components/organisms/Header";
 import TaskList from "@/components/organisms/TaskList";
 import TaskModal from "@/components/organisms/TaskModal";
 import StatsOverview from "@/components/organisms/StatsOverview";
+import Button from "@/components/atoms/Button";
+import ApperIcon from "@/components/ApperIcon";
 
 const Dashboard = () => {
+  const navigate = useNavigate();
   const [searchQuery, setSearchQuery] = useState("");
   const [activeFilter, setActiveFilter] = useState("all");
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [editingTask, setEditingTask] = useState(null);
   const [isMobileSidebarOpen, setIsMobileSidebarOpen] = useState(false);
   const [refreshTrigger, setRefreshTrigger] = useState(0);
-
   const handleCreateTask = () => {
     setEditingTask(null);
     setIsModalOpen(true);
@@ -55,14 +58,26 @@ const Dashboard = () => {
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col overflow-hidden">
-        <Header
-          searchQuery={searchQuery}
-          onSearchChange={setSearchQuery}
-          activeFilter={activeFilter}
-          onFilterChange={handleFilterChange}
-          onMenuToggle={() => setIsMobileSidebarOpen(true)}
-          onCreateTask={handleCreateTask}
-        />
+<div className="flex items-center justify-between p-4 sm:px-6 bg-surface border-b border-gray-200">
+          <Header
+            searchQuery={searchQuery}
+            onSearchChange={setSearchQuery}
+            activeFilter={activeFilter}
+            onFilterChange={handleFilterChange}
+            onMenuToggle={() => setIsMobileSidebarOpen(true)}
+            onCreateTask={handleCreateTask}
+          />
+          
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={() => navigate("/calendar")}
+            className="flex items-center gap-2 ml-4"
+          >
+            <ApperIcon name="Calendar" size={16} />
+            <span className="hidden sm:inline">Calendar</span>
+          </Button>
+        </div>
 
         <main className="flex-1 overflow-y-auto">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6">

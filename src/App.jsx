@@ -1,13 +1,15 @@
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import Dashboard from "@/components/pages/Dashboard";
+import Calendar from "@/components/pages/Calendar";
 
 function App() {
   return (
     <BrowserRouter>
       <div className="min-h-screen bg-background">
-        <Routes>
+<Routes>
           <Route path="/" element={<Dashboard />} />
+          <Route path="/calendar" element={<Calendar />} />
           <Route path="/dashboard" element={<Navigate to="/" replace />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>

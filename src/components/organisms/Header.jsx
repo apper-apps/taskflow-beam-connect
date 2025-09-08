@@ -12,7 +12,7 @@ const Header = ({
   onMenuToggle,
   onCreateTask
 }) => {
-  const quickFilters = [
+const quickFilters = [
     { value: "all", label: "All" },
     { value: "pending", label: "Pending" },
     { value: "completed", label: "Completed" },
