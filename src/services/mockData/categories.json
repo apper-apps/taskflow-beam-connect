@@ -1,0 +1,37 @@
+[
+  {
+    "Id": 1,
+    "name": "Work",
+    "color": "#3B82F6",
+    "icon": "Briefcase",
+    "order": 1
+  },
+  {
+    "Id": 2,
+    "name": "Personal",
+    "color": "#10B981",
+    "icon": "User",
+    "order": 2
+  },
+  {
+    "Id": 3,
+    "name": "Learning",
+    "color": "#F59E0B",
+    "icon": "BookOpen",
+    "order": 3
+  },
+  {
+    "Id": 4,
+    "name": "Health & Fitness",
+    "color": "#EF4444",
+    "icon": "Heart",
+    "order": 4
+  },
+  {
+    "Id": 5,
+    "name": "Shopping",
+    "color": "#8B5CF6",
+    "icon": "ShoppingCart",
+    "order": 5
+  }
+]
